@@ -1,4 +1,11 @@
-import { Container, Box, Paper, Typography, Button } from '@mui/material';
+import {
+  Container,
+  Box,
+  Paper,
+  Typography,
+  Button,
+  Stack
+} from '@mui/material';
 import { NextPage } from 'next';
 import Head from 'next/head';
 import { useState } from 'react';
@@ -6,9 +13,17 @@ import { useState } from 'react';
 const Example1Page: NextPage<{}> = ({}) => {
   const [data, setData] = useState<Record<string, any> | null>(null);
 
+  const fetchDataDefaultDelay = async () => {
+    const response = await fetch(
+      `https://jsonplaceholder.typicode.com/users/1`
+    );
+    const json = await response.json();
+    setData(json);
+  };
+
   const fetchData = async () => {
     const response = await fetch(
-      `https://jsonplaceholder.typicode.com/users/10`
+      `https://jsonplaceholder.typicode.com/users/2`
     );
     const json = await response.json();
     setData(json);
@@ -17,21 +32,26 @@ const Example1Page: NextPage<{}> = ({}) => {
   return (
     <Container maxWidth="md">
       <Head>
-        <title>Example 6 | MSW Talk 2024</title>
+        <title>Example 8 | MSW Talk 2024</title>
       </Head>
       <Box mt={6}>
         <Paper>
           <Box p={2}>
             <Typography variant={'h1'}>MSW examples</Typography>
-            <Typography variant={'h2'}>Example 6, network error</Typography>
+            <Typography variant={'h2'}>Example 8, adding delays</Typography>
             <p>
               This will make a call to a placeholder backend
               (https://jsonplaceholder.typicode.com/), but msw will intercept
-              and simulate a network error.
+              and return a mocked response after a simulated delay.
             </p>
-            <Button onClick={fetchData} variant="contained">
-              Fetch data
-            </Button>
+            <Stack direction="row" spacing={2}>
+              <Button onClick={fetchDataDefaultDelay} variant="contained">
+                Fetch data with default delay
+              </Button>
+              <Button onClick={fetchData} variant="contained">
+                Fetch data with custom delay of 3 seconds
+              </Button>
+            </Stack>
           </Box>
         </Paper>
       </Box>

@@ -38,6 +38,12 @@ const IndexPage: NextPage<{}> = ({}) => {
               <li>
                 <Link href="/example6">Example 6 – Mock a network error</Link>
               </li>
+              <li>
+                <Link href="/example7">Example 7 – Extend a response</Link>
+              </li>
+              <li>
+                <Link href="/example8">Example 8 – Simulate delay</Link>
+              </li>
             </ul>
           </Box>
         </Paper>
