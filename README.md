@@ -1,1 +1,3 @@
-A starter template for creating NextJS + Typescript apps, with MUI (formerly Material UI) for rapid prototyping.
+# Examples for talk about `msw`
+
+See the presentation and slides at https://per.fyi/talks.
