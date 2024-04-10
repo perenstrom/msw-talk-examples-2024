@@ -1,18 +1,20 @@
-import createCache from '@emotion/cache';
-import { CacheProvider } from '@emotion/react';
-import { ThemeProvider, CssBaseline } from '@mui/material';
-import { AppProps } from 'next/dist/shared/lib/router/router';
-import Head from 'next/head';
-import { useRouter } from 'next/router';
-import { handlers1 } from '../__mocks__/handlers1';
-import { handlers2 } from '../__mocks__/handlers2';
-import { handlers3 } from '../__mocks__/handlers3';
-import { handlers4 } from '../__mocks__/handlers4';
-import { handlers5 } from '../__mocks__/handlers5';
-import { handlers6 } from '../__mocks__/handlers6';
-import { handlers7 } from '../__mocks__/handlers7';
-import { handlers8 } from '../__mocks__/handlers8';
-import { theme } from '../styles/theme';
+// imports
+  import createCache from '@emotion/cache';
+  import { CacheProvider } from '@emotion/react';
+  import { ThemeProvider, CssBaseline } from '@mui/material';
+  import { AppProps } from 'next/dist/shared/lib/router/router';
+  import Head from 'next/head';
+  import { useRouter } from 'next/router';
+  import { handlers1 } from '../__mocks__/handlers1';
+  import { handlers2 } from '../__mocks__/handlers2';
+  import { handlers3 } from '../__mocks__/handlers3';
+  import { handlers4 } from '../__mocks__/handlers4';
+  import { handlers5 } from '../__mocks__/handlers5';
+  import { handlers6 } from '../__mocks__/handlers6';
+  import { handlers7 } from '../__mocks__/handlers7';
+  import { handlers8 } from '../__mocks__/handlers8';
+  import { theme } from '../styles/theme';
+// end-imports
 
 const clientSideEmotionCache = createCache({ key: 'css', prepend: true });
 
